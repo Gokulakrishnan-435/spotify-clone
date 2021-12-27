@@ -1,0 +1,87 @@
+@import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+
+#userBlock {
+  height: 100vh;
+}
+#userBlock article {
+  display: flex;
+  height: 100vh;
+}
+.userLeftBlock {
+  height: 100vh;
+  flex-basis: 20%;
+  background: #000;
+}
+.userRightBlock {
+  height: 100vh;
+  flex-basis: 80%;
+  background: #121212;
+}
+.userLeftBlock svg {
+  fill: aliceblue;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+.userLeftBlock div {
+  position: absolute;
+  top: 8px;
+  left: 35px;
+}
+.userLeftBlock ul {
+  position: relative;
+  top: 9px;
+  left: 35px;
+}
+
+.userLeftBlock ul li {
+  padding: 10px;
+  color: whitesmoke;
+  list-style: none;
+}
+.userLeftBlock ul li:nth-child(4){
+  margin-top: 15px;
+}
+.userLeftBlock ul li a {
+  text-decoration: none;
+  color: antiquewhite;
+  padding: 20px;
+  font-weight: bold;
+}
+.horizontalLine {
+  border-left: 210px solid #999;
+  position: relative;
+  left: 10px;
+  top: 315px;
+}
+.install {
+  color: white;
+  
+}
+.install a {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+.userRightBlock button {
+  margin-right: 16px;
+  left: 45px;
+  top: 25px;     
+  position: relative;
+  border-radius: 20px;
+  opacity: 0.6;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: #fff;
+  height: 32px;
+  width: 32px;
+}
+.upgrade button {
+  width: 150px;
+  height: 38px;
+  position: relative;
+  left: 550px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}

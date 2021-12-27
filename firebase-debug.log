@@ -1,0 +1,94 @@
+[debug] [2021-12-15T10:54:16.397Z] ----------------------------------------------------------------------
+[debug] [2021-12-15T10:54:16.404Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ELCOT\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-12-15T10:54:16.405Z] CLI Version:   8.10.0
+[debug] [2021-12-15T10:54:16.406Z] Platform:      win32
+[debug] [2021-12-15T10:54:16.406Z] Node Version:  v14.18.0
+[debug] [2021-12-15T10:54:16.408Z] Time:          Wed Dec 15 2021 16:24:16 GMT+0530 (India Standard Time)
+[debug] [2021-12-15T10:54:16.409Z] ----------------------------------------------------------------------
+[debug] [2021-12-15T10:54:16.409Z] 
+[debug] [2021-12-15T10:54:16.433Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-12-15T10:54:16.435Z] > authorizing via signed-in user
+[debug] [2021-12-15T10:54:16.436Z] [iam] checking project spotify-clone-2a39e for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2021-12-15T10:54:16.446Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/spotify-clone-2a39e:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2021-12-15T10:54:18.262Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 15 Dec 2021 10:54:37 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1134","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-12-15T10:54:18.274Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/spotify-clone-2a39e  
+ 
+[debug] [2021-12-15T10:54:19.123Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 15 Dec 2021 10:54:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'spotify-clone-2a39e'...
+[info] 
+[info] i  deploying database, storage, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2021-12-15T10:54:19.173Z] >>> HTTP REQUEST PUT https://spotify-clone-2a39e-default-rtdb.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "now < 1641666600000",  // 2022-1-9
+    ".write": "now < 1641666600000",  // 2022-1-9
+  }
+}
+[debug] [2021-12-15T10:54:20.281Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Wed, 15 Dec 2021 10:54:39 GMT","content-type":"application/json; charset=utf-8","content-length":"15","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[info] +  database: rules syntax for database spotify-clone-2a39e-default-rtdb is valid 
+[debug] [2021-12-15T10:54:20.346Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/spotify-clone-2a39e  
+ 
+[debug] [2021-12-15T10:54:21.052Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 15 Dec 2021 10:54:40 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2021-12-15T10:54:21.072Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/spotify-clone-2a39e:test  
+ {"source":{"files":[{"name":"storage.rules","content":"rules_version = '2';\nservice firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2021-12-15T10:54:23.138Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 15 Dec 2021 10:54:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  firebase.storage: rules file storage.rules compiled successfully 
+[debug] [2021-12-15T10:54:23.160Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/spotify-clone-2a39e-default-rtdb/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-12-15T10:54:24.982Z] <<< HTTP RESPONSE 500 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Wed, 15 Dec 2021 10:54:44 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-12-15T10:54:24.983Z] <<< HTTP RESPONSE BODY {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2021-12-15T10:54:25.301Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Wed, 15 Dec 2021 10:54:44 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/spotify-clone-2a39e-default-rtdb/versions",
+        "path": "/v1beta1/sites/spotify-clone-2a39e-default-rtdb/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/spotify-clone-2a39e-default-rtdb/versions"
+      },
+      "method": "POST"
+    }
+  }
+}
